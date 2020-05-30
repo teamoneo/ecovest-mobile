@@ -27,10 +27,6 @@ export default function Routes() {
         labelStyle: {
           fontSize: 12,
         },
-        indicatorStyle: {
-          borderTopColor: '#6495ed',
-          borderTopWidth: 2,
-        },
       }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color }) => {
