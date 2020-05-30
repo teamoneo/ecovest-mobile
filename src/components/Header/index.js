@@ -27,7 +27,6 @@ export default function Header() {
           />
         </Svg>
       </DivSvg>
-
     </Container>
   );
 }
