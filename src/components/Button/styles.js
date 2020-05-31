@@ -6,16 +6,15 @@ export const Container = styled.TouchableOpacity`
 
   border-radius: 54px;
 
-  border: 2px solid ${props => props.color};
+  border: 2px solid ${(props) => props.color};
 
   flex-direction: row;
-  
 
   align-items: center;
   justify-content: center;
 `;
 
 export const ButtonText = styled.Text`
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   font-size: 18px;
 `;

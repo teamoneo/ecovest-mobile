@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Svg, Path, Defs, Pattern, Use, Image } from "react-native-svg"
+import { Svg, Path, Defs, Pattern, Use, Image } from 'react-native-svg';
 
 export default function AdultCheddar() {
-  return(
+  return (
     <Svg width={122} height={122} viewBox="0 0 122 122" fill="none">
       <Path fill="url(#prefix__pattern0)" d="M0 0h122v122H0z" />
       <Defs>

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Svg, Path, Defs, Pattern, Use, Image } from "react-native-svg"
+import { Svg, Path, Defs, Pattern, Use, Image } from 'react-native-svg';
 
 export default function SadCheddar() {
-  return(
+  return (
     <Svg width={100} height={81} viewBox="0 0 100 81" fill="none">
       <Path fill="url(#prefix__pattern0)" d="M0 0h100v80.328H0z" />
       <Defs>

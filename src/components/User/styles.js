@@ -27,6 +27,6 @@ export const UserName = styled.Text`
 
 export const UserAccount = styled.Text`
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: Ubuntu;
 `;

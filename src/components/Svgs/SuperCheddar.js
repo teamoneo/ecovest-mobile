@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Svg, Path, Defs, Pattern, Use, Image } from "react-native-svg"
+import { Svg, Path, Defs, Pattern, Use, Image } from 'react-native-svg';
 
 export default function SuperCheddar() {
-  return(
+  return (
     <Svg width={119} height={160} viewBox="0 0 119 160" fill="none">
       <Path fill="url(#prefix__pattern0)" d="M0 0h119v160H0z" />
       <Defs>
