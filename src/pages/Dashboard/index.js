@@ -12,7 +12,11 @@ import Box from '../../components/Box';
 
 import InformationControl from '../../components/InformationControl';
 
-import {
+import MainTable from "../../components/Table"
+
+import TableIten from '../../components/TableIten'
+
+import { 
   Container,
   TittleGoal,
   Divider,
@@ -41,6 +45,46 @@ export default function Dashboard() {
       id: 3,
       category: 'Faculdade',
       value: 90,
+    },
+  ];
+  
+  
+  const hist = [
+    {
+      id: 0,
+      data: '22/jan',
+      name: 'Luz',
+      value: '129,90'
+    },
+    {
+      id: 1,
+      data: '22/jan',
+      name: 'Compras',
+      value: '129,90'
+    },
+    {
+      id: 2,
+      data: '21/jan',
+      name: 'Carro',
+      value: '128,90'
+    },
+    {
+      id: 3,
+      data: '22/jan',
+      name: 'Luz',
+      value: '-129,90'
+    },
+    {
+      id: 4,
+      data: '22/ja',
+      name: 'Luz',
+      value: '129,90'
+    },
+    {
+      id: 5,
+      data: '22/jan',
+      name: 'Luz',
+      value: '129,90'
     },
   ];
 
@@ -79,6 +123,16 @@ export default function Dashboard() {
           adicionalInformation="Limite total: R$ 600,00"
           level={40}
         />
+        
+        <MainTable>
+          {
+            hist.map(({name,data,value},index) => (
+              <TableIten key={index} name={name} data={data} value={value}></TableIten>)
+            )
+          }
+        </MainTable>
+
+
       </Container>
     </ScrollView>
   );
