@@ -128,7 +128,6 @@ export default function Reservation() {
                 dogValue < 3
                   ? () => {
                       nextDog();
-                      setDogPopUp(dogValue);
                       setVisibleDogPopUp(true);
                     }
                   : () => {}
