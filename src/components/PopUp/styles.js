@@ -24,7 +24,7 @@ export const PopUpContainer = styled.View`
   background-color: #fff;
   padding: 20px;
 
-  align-items: ${(props) => (props.center ? 'center' : 'none')};
+  ${(props) => (props.center ? 'align-items: center' : '')};
 `;
 
 export const PopUpTitleText = styled.Text`

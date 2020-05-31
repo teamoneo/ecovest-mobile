@@ -29,14 +29,9 @@ import SadCheddar from '../../components/Svgs/Dog/SadCheddar';
 
 export default function Reservation() {
   const [visiblePopUp, setVisiblePopUp] = useState(false);
-  const [dogValue, setDogValue] = useState(1);
+  const [visibleDogPopUp, setVisibleDogPopUp] = useState(false);
 
-  const dog = [
-    <SadCheddar />,
-    <BabyCheddar />,
-    <AdultCheddar />,
-    <SuperCheddar />,
-  ];
+  const [dogValue, setDogValue] = useState(1);
 
   const value = [
     {
@@ -44,24 +39,34 @@ export default function Reservation() {
       month: 1,
       level: 20,
       dogLevel: 'Bebê',
+      image: <SadCheddar />,
     },
     {
       id: 1,
       month: 1,
       level: 20,
       dogLevel: 'Bebê',
+      image: <BabyCheddar />,
+      popUpText:
+        'Cheddar cresceu um pouco, ele ainda está um pouco longe de ser independente, mas já se fortaleceu, e tem grande potencial!',
     },
     {
       id: 2,
       month: 3,
       level: 50,
       dogLevel: 'Adulto',
+      image: <AdultCheddar />,
+      popUpText:
+        'Cheddar se tornou um adulto! Finalmente ele atingiu o potencial dele e agora ele pode viver a sua tranquilamente sem preocupações, e em casos de emergências, pode utilizar suas energias para ajudar seu dono!',
     },
     {
       id: 3,
       month: 6,
       level: 80,
       dogLevel: 'Super',
+      image: <SuperCheddar />,
+      popUpText:
+        'Cheddar é simplesmente um super-cão! Ele é praticamente invencível, e com ele você poderá escapar até dos maiores sufocos!',
     },
   ];
 
@@ -87,7 +92,7 @@ export default function Reservation() {
               birthdate="25/05/2020"
               level={value[dogValue].dogLevel}
             >
-              {dog[value[dogValue].id]}
+              {value[dogValue].image}
             </DogContainer>
           </Box>
 
@@ -119,7 +124,15 @@ export default function Reservation() {
               style={{ marginBottom: 10 }}
               color="#54F078"
               text="Depositar"
-              onPress={() => nextDog()}
+              onPress={
+                dogValue < 3
+                  ? () => {
+                      nextDog();
+                      setDogPopUp(dogValue);
+                      setVisibleDogPopUp(true);
+                    }
+                  : () => {}
+              }
             />
 
             <Button
@@ -164,10 +177,28 @@ export default function Reservation() {
             style={{ marginTop: 10 }}
             color="#FA3114"
             text="Retirar"
-            onPress={() => {
-              previousDog();
-              setVisiblePopUp(false);
-            }}
+            onPress={
+              dogValue < 1
+                ? () => {
+                    setVisiblePopUp(false);
+                  }
+                : () => {
+                    previousDog();
+                    setVisiblePopUp(false);
+                  }
+            }
+          />
+        </PopUp>
+      )}
+      {visibleDogPopUp && (
+        <PopUp title="Cheddar cresceu" center>
+          {value[dogValue].image}
+          <ReasonTitleText>{value[dogValue].popUpText}</ReasonTitleText>
+          <Button
+            style={{ marginBottom: 10 }}
+            color="#54F078"
+            text="Oba!"
+            onPress={() => setVisibleDogPopUp(false)}
           />
         </PopUp>
       )}
