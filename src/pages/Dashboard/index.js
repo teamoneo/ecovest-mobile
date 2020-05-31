@@ -22,6 +22,7 @@ import {
   TittleGoal,
   Divider,
   CardContent,
+  elevationStyle,
 } from './styles';
 
 export default function Dashboard() {
@@ -52,7 +53,7 @@ export default function Dashboard() {
   return (
     <ScrollView>
       <Header />
-      <Container style={{elevation: 30}}>
+      <Container style={elevationStyle}>
         <InfoControl>
           <UserImage source={{uri: 'https://i.pinimg.com/originals/89/02/39/8902391adb64cfb9a8ba4cbc13083a58.jpg'}} />
           <UserTextControl>
