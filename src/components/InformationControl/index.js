@@ -1,24 +1,49 @@
-import React from 'react';
+import React, { ReactPropTypes } from 'react';
 
 import * as Unicons from '@iconscout/react-native-unicons';
 
-import { InformationControlContainer, InformationTotal, InformationTotalText, InformationText, TotalLine, ProgressLine } from './styles';
+import {
+  InformationControlContainer,
+  InformationTotal,
+  InformationTotalText,
+  InformationText,
+  TotalLine,
+  ProgressLine,
+} from './styles';
 
-export default function InformationControl({ informationTitleText, colorTextInfo, informationText, adicionalInformation }) {
-  return(
-    <InformationControlContainer>            
-    <InformationTotal>
-     <Unicons.UilAnalytics size={18} color="#7E868A" />
-      <InformationTotalText>{informationTitleText}</InformationTotalText>
-    </InformationTotal>
+const InformationControl = ({
+  informationTitleText,
+  colorTextInfo,
+  informationText,
+  adicionalInformation,
+  level,
+}) => {
+  return (
+    <InformationControlContainer>
+      <InformationTotal>
+        <Unicons.UilAnalytics size={18} color="#7E868A" />
+        <InformationTotalText>{informationTitleText}</InformationTotalText>
+      </InformationTotal>
 
-    <InformationText color={colorTextInfo}>{informationText}</InformationText>
+      <InformationText color={colorTextInfo}>{informationText}</InformationText>
 
-    <TotalLine>
-      <ProgressLine color={colorTextInfo} />
-    </TotalLine>
+      <TotalLine>
+        <ProgressLine color={colorTextInfo} level={level} />
+      </TotalLine>
 
-    <InformationTotalText style={{ marginTop: 10 }} >{adicionalInformation}</InformationTotalText>
-  </InformationControlContainer>
+      <InformationTotalText style={{ marginTop: 10 }}>
+        {adicionalInformation}
+      </InformationTotalText>
+    </InformationControlContainer>
   );
-}
+};
+
+// InformationControl.propTypes = {
+//   informationTitleText: ReactPropTypes.string.isRequired,
+//   colorTextInfo: ReactPropTypes.string.isRequired,
+//   informationText: ReactPropTypes.string.isRequired,
+//   adicionalInformation: ReactPropTypes.string.isRequired,
+//   level: ReactPropTypes.number.isRequired,
+// };
+
+export default InformationControl;

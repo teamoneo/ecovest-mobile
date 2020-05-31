@@ -24,6 +24,7 @@ export const TableTitle = styled.Text`
   font-size:20px;
   color:#9D9FA2;
 `;
+
 export const ItensArea = styled.View`
   display:flex;
   flex-direction:column;

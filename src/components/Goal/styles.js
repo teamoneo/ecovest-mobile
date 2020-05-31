@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export const ContainerBackground = styled(LinearGradient).attrs({
-  colors: ['rgba(255,255,255,0.85)','#E6E7E8', '#fff'],
+  colors: ['rgba(255,255,255,0.85)', '#E6E7E8', '#fff'],
 })`
   display: flex;
   align-items: center;
@@ -21,11 +21,11 @@ export const Container = styled.View`
 `;
 
 export const PillContainer = styled.View`
-  display:flex;
+  display: flex;
   width: 20px;
   height: 93px;
   border-radius: 50px;
-  border: 1px solid #7E868A;
+  border: 1px solid #7e868a;
   justify-content: flex-end;
 `;
 
@@ -33,7 +33,7 @@ export const Level = styled(LinearGradient).attrs({
   colors: ['#FFDF4F', '#F99D1C'],
 })`
   width: 100%;
-  height: ${props => `${props.level}%` };
+  height: ${(props) => `${props.level}%`};
   border-radius: 50px;
 `;
 
