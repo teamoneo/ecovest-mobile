@@ -5,17 +5,19 @@ import {
 } from 'react-native-svg';
 
 import {
-  Container, DivSvg, Circle,
+  Container, DivSvg, Circle, elevationStyle
 } from './styles';
 
 export default function Header() {
   return (
     <Container>
-      <Circle />
+      <Circle style={{
+        elevationStyle
+      }} />
       <DivSvg>
         <Svg
-          width={360}
-          height={296}
+          width={414}
+          height={282}
           viewBox="0 0 414 296"
           fill="none"
         >
