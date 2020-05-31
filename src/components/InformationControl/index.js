@@ -4,7 +4,7 @@ import * as Unicons from '@iconscout/react-native-unicons';
 
 import { InformationControlContainer, InformationTotal, InformationTotalText, InformationText, TotalLine, ProgressLine } from './styles';
 
-export default function InformationControl({ informationTitleText, colorTextInfo, informationText, adicionalInformation }) {
+export default function InformationControl({ informationTitleText, colorTextInfo, informationText, adicionalInformation, level }) {
   return(
     <InformationControlContainer>            
     <InformationTotal>
@@ -15,7 +15,7 @@ export default function InformationControl({ informationTitleText, colorTextInfo
     <InformationText color={colorTextInfo}>{informationText}</InformationText>
 
     <TotalLine>
-      <ProgressLine color={colorTextInfo} />
+      <ProgressLine color={colorTextInfo} level={level} />
     </TotalLine>
 
     <InformationTotalText style={{ marginTop: 10 }} >{adicionalInformation}</InformationTotalText>

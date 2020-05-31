@@ -1,8 +1,8 @@
 import React from 'react';
 
-import * as Unicons from '@iconscout/react-native-unicons';
+import { ScrollView, View, FlatList } from 'react-native';
 
-import { Text, ScrollView, View, FlatList } from 'react-native';
+import User from '../../components/User';
 
 import Header from '../../components/Header';
 
@@ -14,11 +14,6 @@ import InformationControl from '../../components/InformationControl';
 
 import { 
   Container,
-  InfoControl,
-  UserImage,
-  UserName,
-  UserAccount,
-  UserTextControl,
   TittleGoal,
   Divider,
   CardContent,
@@ -48,19 +43,14 @@ export default function Dashboard() {
       category: 'Faculdade',
       value: 90,
     },
-  ]
+  ];
 
   return (
     <ScrollView>
       <Header />
       <Container style={elevationStyle}>
-        <InfoControl>
-          <UserImage source={{uri: 'https://i.pinimg.com/originals/89/02/39/8902391adb64cfb9a8ba4cbc13083a58.jpg'}} />
-          <UserTextControl>
-            <UserName>Raymond Holt</UserName>
-            <UserAccount>ag 0005 c/c 12345-67</UserAccount>          
-          </UserTextControl>
-        </InfoControl>
+        
+        <User />
         
         <Box color="#fff">
             <CardContent>
@@ -85,6 +75,7 @@ export default function Dashboard() {
           colorTextInfo="#F99D1C"
           informationText="R$ 536,00"
           adicionalInformation="Limite total: R$ 600,00"
+          level="40"
         />
 
       </Container>

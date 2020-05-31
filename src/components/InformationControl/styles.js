@@ -38,6 +38,6 @@ export const TotalLine = styled.View`
 export const ProgressLine = styled.View`
   background: ${props => props.color};
   height: 5px;
-  width: 80%;
+  width: ${props => `${props.level}%`};
   border-radius: 3px;
 `;
