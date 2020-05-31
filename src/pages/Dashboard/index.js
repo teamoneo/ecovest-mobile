@@ -12,11 +12,11 @@ import Box from '../../components/Box';
 
 import InformationControl from '../../components/InformationControl';
 
-import MainTable from "../../components/Table"
+import MainTable from '../../components/Table';
 
-import TableIten from '../../components/TableIten'
+import TableItem from '../../components/TableItem';
 
-import { 
+import {
   Container,
   TittleGoal,
   Divider,
@@ -25,7 +25,7 @@ import {
 } from './styles';
 
 export default function Dashboard() {
-  const data = [
+  const values = [
     {
       id: 0,
       category: 'Casa',
@@ -47,44 +47,43 @@ export default function Dashboard() {
       value: 90,
     },
   ];
-  
-  
+
   const hist = [
     {
       id: 0,
       data: '22/jan',
       name: 'Luz',
-      value: '129,90'
+      value: '129,90',
     },
     {
       id: 1,
       data: '22/jan',
       name: 'Compras',
-      value: '129,90'
+      value: '129,90',
     },
     {
       id: 2,
       data: '21/jan',
       name: 'Carro',
-      value: '128,90'
+      value: '128,90',
     },
     {
       id: 3,
       data: '22/jan',
       name: 'Luz',
-      value: '-129,90'
+      value: '-129,90',
     },
     {
       id: 4,
       data: '22/ja',
       name: 'Luz',
-      value: '129,90'
+      value: '129,90',
     },
     {
       id: 5,
       data: '22/jan',
       name: 'Luz',
-      value: '129,90'
+      value: '129,90',
     },
   ];
 
@@ -100,7 +99,7 @@ export default function Dashboard() {
             <Divider />
             <FlatList
               horizontal
-              data={data}
+              data={values}
               keyExtractor={(item) => String(item.id)}
               renderItem={({ item }) => (
                 <View style={{ paddingHorizontal: 15 }}>
@@ -123,16 +122,17 @@ export default function Dashboard() {
           adicionalInformation="Limite total: R$ 600,00"
           level={40}
         />
-        
+
         <MainTable>
-          {
-            hist.map(({name,data,value},index) => (
-              <TableIten key={index} name={name} data={data} value={value}></TableIten>)
-            )
-          }
+          {hist.map(({ name, data, value }, index) => (
+            <TableItem
+              key={String(index)}
+              name={name}
+              data={data}
+              value={value}
+            />
+          ))}
         </MainTable>
-
-
       </Container>
     </ScrollView>
   );

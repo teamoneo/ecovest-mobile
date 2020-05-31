@@ -8,9 +8,6 @@ import {
   Container,
   elevationStyle,
   TextButtons,
-  Background,
-  PopUpContainer,
-  PopUpTitleText,
   ReasonTitleText,
   ReasonContainer,
   ReasonText,
@@ -20,14 +17,15 @@ import Header from '../../components/Header';
 import User from '../../components/User';
 import Box from '../../components/Box';
 import DogContainer from '../../components/DogContainer';
+import PopUp from '../../components/PopUp';
 
 import InformationControl from '../../components/InformationControl';
 import Button from '../../components/Button';
 
-import BabyCheddar from '../../components/Svgs/BabyCheddar';
-import AdultCheddar from '../../components/Svgs/AdultCheddar';
-import SuperCheddar from '../../components/Svgs/SuperCheddar';
-import SadCheddar from '../../components/Svgs/SadCheddar';
+import BabyCheddar from '../../components/Svgs/Dog/BabyCheddar';
+import AdultCheddar from '../../components/Svgs/Dog/AdultCheddar';
+import SuperCheddar from '../../components/Svgs/Dog/SuperCheddar';
+import SadCheddar from '../../components/Svgs/Dog/SadCheddar';
 
 export default function Reservation() {
   const [visiblePopUp, setVisiblePopUp] = useState(false);
@@ -136,45 +134,42 @@ export default function Reservation() {
         </Container>
       </ScrollView>
       {visiblePopUp && (
-        <Background>
-          <PopUpContainer>
-            <PopUpTitleText>Retirar Reserva</PopUpTitleText>
-            <ReasonTitleText>
-              Você não deveria fazer isso a menos que:
-            </ReasonTitleText>
-            <ReasonContainer>
-              <Unicons.UilFire size={26} color="#F99D1C" />
-              <ReasonText>Sua casa esteja pegando fogo</ReasonText>
-            </ReasonContainer>
-            <ReasonContainer>
-              <Unicons.UilCoronavirus size={26} color="#F99D1C" />
-              <ReasonText>Estejamos enfrentando uma pandemia</ReasonText>
-            </ReasonContainer>
-            <ReasonContainer>
-              <Unicons.UilRocket size={26} color="#F99D1C" />
-              <ReasonText>O mundo foi invadido por alienígenas</ReasonText>
-            </ReasonContainer>
-            <ReasonTitleText>
-              Brincadeiras a parte, quer mesmo retirar sua reserva?
-            </ReasonTitleText>
-            <Button
-              style={{ marginBottom: 10 }}
-              color="#54F078"
-              text="Não Retirar"
-              onPress={() => setVisiblePopUp(false)}
-            />
+        <PopUp title="Retirar Reserva">
+          <ReasonTitleText>
+            Você não deveria fazer isso a menos que:
+          </ReasonTitleText>
+          <ReasonContainer>
+            <Unicons.UilFire size={26} color="#F99D1C" />
+            <ReasonText>Sua casa esteja pegando fogo</ReasonText>
+          </ReasonContainer>
+          <ReasonContainer>
+            <Unicons.UilCoronavirus size={26} color="#F99D1C" />
+            <ReasonText>Estejamos enfrentando uma pandemia</ReasonText>
+          </ReasonContainer>
+          <ReasonContainer>
+            <Unicons.UilRocket size={26} color="#F99D1C" />
+            <ReasonText>O mundo foi invadido por alienígenas</ReasonText>
+          </ReasonContainer>
+          <ReasonTitleText>
+            Brincadeiras a parte, quer mesmo retirar sua reserva?
+          </ReasonTitleText>
+          <Button
+            style={{ marginBottom: 10 }}
+            color="#54F078"
+            text="Não Retirar"
+            onPress={() => setVisiblePopUp(false)}
+          />
 
-            <Button
-              style={{ marginTop: 10 }}
-              color="#FA3114"
-              text="Retirar"
-              onPress={() => {
-                previousDog();
-                setVisiblePopUp(false);
-              }}
-            />
-          </PopUpContainer>
-        </Background>
+          <Button
+            style={{ marginTop: 10 }}
+            color="#FA3114"
+            text="Retirar"
+            onPress={() => {
+              previousDog();
+              setVisiblePopUp(false);
+            }}
+          />
+        </PopUp>
       )}
     </>
   );

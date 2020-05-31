@@ -40,7 +40,7 @@ const Routes = () => {
           if (route.name === 'Perfil') {
             return <Unicons.UilUser size={25} color={color} />;
           }
-          return <Unicons.UilChartLine size={25} color={color} />;
+          return <Unicons.UilBill size={25} color={color} />;
         },
       })}
     >
