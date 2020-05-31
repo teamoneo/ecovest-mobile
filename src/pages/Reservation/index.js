@@ -83,7 +83,7 @@ export default function Reservation() {
         <Container style={elevationStyle}>
           <User />
 
-          <Box color="#D3E9FF">
+          <Box style={{ alignItems: 'center' }} color="#D3E9FF">
             <DogContainer
               name="Cheddar"
               birthdate="25/05/2020"
