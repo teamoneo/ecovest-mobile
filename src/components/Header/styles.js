@@ -1,8 +1,6 @@
 import styled from 'styled-components/native';
-import { StyleSheet } from 'react-native';
 
-export const Container = styled.View`  
-`;
+export const Container = styled.View``;
 
 export const DivSvg = styled.View`
   position: absolute;
@@ -16,11 +14,11 @@ export const Circle = styled.View`
   align-self: center;
   position: absolute;
 
-  background-color: #F99D1C;
+  background-color: #f99d1c;
 
   border-bottom-left-radius: 500px;
   border-bottom-right-radius: 500px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 `;
 
-export const elevationStyle = {elevation: 5};
+export const elevationStyle = { elevation: 5 };

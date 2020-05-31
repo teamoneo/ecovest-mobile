@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactPropTypes } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as Unicons from '@iconscout/react-native-unicons';
 
@@ -9,10 +9,9 @@ import Profile from './pages/Profile';
 
 const Tab = createBottomTabNavigator();
 
-export default function Routes() {
+const Routes = () => {
   return (
     <Tab.Navigator
-      screenOptions={{ headerShown: false }}
       tabBarOptions={{
         swipeEnabled: true,
         keyboardHidesTabBar: true,
@@ -29,35 +28,31 @@ export default function Routes() {
         },
       }}
       screenOptions={({ route }) => ({
+        headerShown: false,
+        // eslint-disable-next-line react/prop-types
         tabBarIcon: ({ color }) => {
-          if (route.name === 'Painel') {
-            return <Unicons.UilChartLine size={25} color={color} />;
-          } if (route.name === 'Reserva') {
+          Tab.Navigator.propTypes = {
+            screenOptions: ReactPropTypes.obj.isRequired,
+          };
+          if (route.name === 'Reserva') {
             return <Unicons.UilPadlock size={25} color={color} />;
-          } if (route.name === 'Metas') {
+          }
+          if (route.name === 'Metas') {
             return <Unicons.UilTrophy size={25} color={color} />;
-          } if (route.name === 'Perfil') {
+          }
+          if (route.name === 'Perfil') {
             return <Unicons.UilUser size={25} color={color} />;
           }
+          return <Unicons.UilChartLine size={25} color={color} />;
         },
       })}
     >
-      <Tab.Screen
-        name="Painel"
-        component={Dashboard}
-      />
-      <Tab.Screen
-        name="Reserva"
-        component={Reservation}
-      />
-      <Tab.Screen
-        name="Metas"
-        component={Goals}
-      />
-      <Tab.Screen
-        name="Perfil"
-        component={Profile}
-      />
+      <Tab.Screen name="Painel" component={Dashboard} />
+      <Tab.Screen name="Reserva" component={Reservation} />
+      <Tab.Screen name="Metas" component={Goals} />
+      <Tab.Screen name="Perfil" component={Profile} />
     </Tab.Navigator>
   );
-}
+};
+
+export default Routes;

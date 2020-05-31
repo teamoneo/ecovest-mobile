@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { ReactPropTypes } from 'react';
 
 import { Container, Content } from './styles';
 
-export default function Box({ color, children }) {
-  return(
+const Box = ({ color, children }) => {
+  return (
     <Container color={color}>
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
     </Container>
   );
-}
+};
+
+Box.propTypes = {
+  color: ReactPropTypes.string.isRequired,
+  children: ReactPropTypes.func.isRequired,
+};
+
+export default Box;
