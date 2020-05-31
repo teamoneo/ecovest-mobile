@@ -17,13 +17,13 @@ export const InformationTotal = styled.View`
 
 export const InformationTotalText = styled.Text`
   font-size: 18px;
-  color: #9D9FA2;
+  color: #9d9fa2;
   margin-left: 10px;
 `;
 
 export const InformationText = styled.Text`
   font-size: 36px;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   padding: 10px 0;
   margin-bottom: 10px;
 `;
@@ -31,13 +31,13 @@ export const InformationText = styled.Text`
 export const TotalLine = styled.View`
   height: 5px;
   width: 100%;
-  background: #C4C4C4;
+  background: #c4c4c4;
   border-radius: 3px;
 `;
 
 export const ProgressLine = styled.View`
-  background: ${props => props.color};
+  background: ${(props) => props.color};
   height: 5px;
-  width: ${props => `${props.level}%`};
+  width: ${(props) => `${props.level}%`};
   border-radius: 3px;
 `;

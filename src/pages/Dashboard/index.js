@@ -12,7 +12,7 @@ import Box from '../../components/Box';
 
 import InformationControl from '../../components/InformationControl';
 
-import { 
+import {
   Container,
   TittleGoal,
   Divider,
@@ -21,7 +21,6 @@ import {
 } from './styles';
 
 export default function Dashboard() {
-
   const data = [
     {
       id: 0,
@@ -49,35 +48,37 @@ export default function Dashboard() {
     <ScrollView>
       <Header />
       <Container style={elevationStyle}>
-        
         <User />
-        
+
         <Box color="#fff">
-            <CardContent>
-              <Goal level="80" active="true" />
-              <Divider />
-              <FlatList
-                horizontal={true}
-                data={data}
-                keyExtractor={(item) => String(item.id)}
-                renderItem={({ item }) => (
-                  <View style={{ paddingHorizontal: 15 }}>
-                    <Goal level={item.value} active="none" icon={item.category} />
-                  </View>)
-                }
-              />
-            </CardContent>
-            <TittleGoal>Metas</TittleGoal>
+          <CardContent>
+            <Goal level={80} active="true" />
+            <Divider />
+            <FlatList
+              horizontal
+              data={data}
+              keyExtractor={(item) => String(item.id)}
+              renderItem={({ item }) => (
+                <View style={{ paddingHorizontal: 15 }}>
+                  <Goal
+                    level={Number(item.value)}
+                    active="none"
+                    icon={item.category}
+                  />
+                </View>
+              )}
+            />
+          </CardContent>
+          <TittleGoal>Metas</TittleGoal>
         </Box>
-                  
-        <InformationControl 
-          informationTitleText="Todos os gastos" 
+
+        <InformationControl
+          informationTitleText="Todos os gastos"
           colorTextInfo="#F99D1C"
           informationText="R$ 536,00"
           adicionalInformation="Limite total: R$ 600,00"
-          level="40"
+          level={40}
         />
-
       </Container>
     </ScrollView>
   );

@@ -8,23 +8,23 @@ export const Container = styled.View`
 `;
 
 export const Divider = styled.View`
-  height:136px;
+  height: 136px;
   width: 3px;
-  background: #DCDDDE;
+  background: #dcddde;
   margin: 0 20px;
 `;
 
 export const TittleGoal = styled.Text`
-  color:#9D9FA2;
-  margin-left:85px;
-  font-size:14px;
+  color: #9d9fa2;
+  margin-left: 85px;
+  font-size: 14px;
 `;
 
 export const CardContent = styled.View`
-  display:flex;
+  display: flex;
   flex-direction: row;
-  align-items:flex-end;
-  line-height:16px;
+  align-items: flex-end;
+  line-height: 16px;
 `;
 
-export const elevationStyle = {elevation: 5};
+export const elevationStyle = { elevation: 5 };
