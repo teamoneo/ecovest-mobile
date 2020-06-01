@@ -37,14 +37,14 @@ export default function Reservation() {
     {
       id: 0,
       month: 1,
-      level: 20,
+      level: 0,
       dogLevel: 'Bebê',
       image: <SadCheddar />,
     },
     {
       id: 1,
       month: 1,
-      level: 20,
+      level: 33,
       dogLevel: 'Bebê',
       image: <BabyCheddar />,
       popUpText:
@@ -53,7 +53,7 @@ export default function Reservation() {
     {
       id: 2,
       month: 3,
-      level: 50,
+      level: 66,
       dogLevel: 'Adulto',
       image: <AdultCheddar />,
       popUpText:
@@ -62,7 +62,7 @@ export default function Reservation() {
     {
       id: 3,
       month: 6,
-      level: 80,
+      level: 100,
       dogLevel: 'Super',
       image: <SuperCheddar />,
       popUpText:

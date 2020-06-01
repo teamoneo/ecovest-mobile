@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const InformationControlContainer = styled.View`
   display: flex;
-  margin-top: 120px;
+  margin-top: ${(props) => props.margin ? `${props.margin}px` : '120px' };
   padding: 10px 0;
   flex-direction: column;
   width: 100%;

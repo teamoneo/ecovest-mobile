@@ -14,6 +14,7 @@ export const DataText = styled.Text`
   color: #9d9fa2;
 `;
 export const NameText = styled.Text`
+  width:100%;
   margin-left: 4px;
   font-size: 14px;
   color: #9d9fa2;
@@ -23,6 +24,7 @@ export const ValueText = styled.Text`
   color: #7e868a;
 `;
 export const NameWrap = styled.View`
+  width:20%;
   align-items: center;
   flex-direction: row;
 `;

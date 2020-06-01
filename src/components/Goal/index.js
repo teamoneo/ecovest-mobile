@@ -19,7 +19,7 @@ const Goal = ({ level, active, icon }) => {
             <Level level={level} />
           </PillContainer>
           <Icon>
-            <Unicons.UilAnalytics size={32} color="#F99D1C" />
+            <Unicons.UilBill size={32} color="#F99D1C" />
           </Icon>
         </ContainerBackground>
       ) : (

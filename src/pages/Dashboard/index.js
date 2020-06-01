@@ -51,39 +51,51 @@ export default function Dashboard() {
   const hist = [
     {
       id: 0,
-      data: '22/jan',
-      name: 'Luz',
-      value: '129,90',
+      data: '31/mai',
+      name: 'Vendas Online',
+      value: '259,90',
     },
     {
       id: 1,
-      data: '22/jan',
-      name: 'Compras',
-      value: '129,90',
-    },
-    {
-      id: 2,
-      data: '21/jan',
-      name: 'Carro',
-      value: '128,90',
-    },
-    {
-      id: 3,
-      data: '22/jan',
+      data: '31/mai',
       name: 'Luz',
       value: '-129,90',
     },
     {
+      id: 2,
+      data: '31/mai',
+      name: 'Compras Online',
+      value: '-69,90',
+    },
+    {
+      id: 3,
+      data: '31/mai',
+      name: 'Meta',
+      value: '100,00',
+    },
+    {
       id: 4,
-      data: '22/ja',
-      name: 'Luz',
-      value: '129,90',
+      data: '30/mai',
+      name: 'Compras',
+      value: '-230,90',
     },
     {
       id: 5,
-      data: '22/jan',
-      name: 'Luz',
-      value: '129,90',
+      data: '30/mai',
+      name: 'Reserva',
+      value: '300,00',
+    },
+    {
+      id: 6,
+      data: '30/mai',
+      name: 'Renda',
+      value: '+1000,00',
+    },
+    {
+      id: 7,
+      data: '29/mai',
+      name: 'Aluguel',
+      value: '-147,74',
     },
   ];
 
@@ -112,9 +124,8 @@ export default function Dashboard() {
               )}
             />
           </CardContent>
-          <TittleGoal>Metas</TittleGoal>
+          <TittleGoal>Metas ></TittleGoal>
         </Box>
-
         <InformationControl
           informationTitleText="Todos os gastos"
           colorTextInfo="#F99D1C"
@@ -123,13 +134,14 @@ export default function Dashboard() {
           level={40}
         />
 
-        <MainTable>
+        <MainTable titles={["Data","Nome","Valor"]} final={"Maio"}>
           {hist.map(({ name, data, value }, index) => (
             <TableItem
               key={String(index)}
               name={name}
-              data={data}
               value={value}
+              date={data}
+              edit={undefined}
             />
           ))}
         </MainTable>

@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Reservation from './pages/Reservation';
 import Goals from './pages/Goals';
 import Profile from './pages/Profile';
+import {View} from 'react-native'
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +41,7 @@ const Routes = () => {
           if (route.name === 'Perfil') {
             return <Unicons.UilUser size={25} color={color} />;
           }
-          return <Unicons.UilBill size={25} color={color} />;
+          return <Unicons.UilChart size={25} color={color} />;
         },
       })}
     >

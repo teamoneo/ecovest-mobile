@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import * as Unicons from '@iconscout/react-native-unicons';
 
-import { ScrollView, View, TouchableOpacity } from 'react-native';
+import { ScrollView, View, TouchableOpacity,Image} from 'react-native';
 
 import {
   Container,
@@ -11,6 +11,7 @@ import {
   ReasonTitleText,
   ReasonContainer,
   ReasonText,
+  Pelucia,
 } from './styles';
 
 import Header from '../../components/Header';
@@ -22,7 +23,6 @@ import Button from '../../components/Button';
 
 import BlockGift from '../../components/Svgs/Gifts/BlockGift';
 import FirstGift from '../../components/Svgs/Gifts/FirstGift';
-import Pokebola from '../../components/Svgs/Pokebola';
 import PopUp from '../../components/PopUp';
 
 export default function Goals() {
@@ -56,8 +56,8 @@ export default function Goals() {
   const gifs = [
     {
       id: 0,
-      giftLabel: <BlockGift />,
-      gift: <Pokebola />,
+      giftLabel: <FirstGift />,
+      gift: <Pelucia source={require('../../components/Svgs/pelucia.png')} />,
       title: 'Parabéns!',
       message: 'Você ganhou uma recompensa',
       addicionalMessage: 'Continue arrecadando para receber mais recompensas!',
@@ -65,7 +65,7 @@ export default function Goals() {
     },
     {
       id: 1,
-      giftLabel: <FirstGift />,
+      giftLabel: <BlockGift />,
       title: 'Este presente pode ser seu!',
       message: 'Infelizmente você não alcançou o objetivo desta recompensa',
       addicionalMessage: 'Continue arrecadando para receber uma recompensa!',
@@ -79,7 +79,6 @@ export default function Goals() {
         <Header />
         <Container style={elevationStyle}>
           <User />
-
           <View style={{ height: 240, justifyContent: 'center' }}>
             <ScrollView horizontal pagingEnabled>
               <View style={{ marginRight: 30 }}>

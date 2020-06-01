@@ -7,16 +7,17 @@ export const Container = styled.View`
   padding: 0 30px;
 `;
 
-export const elevationStyle = { elevation: 5 };
+export const UserContainer = styled.View`
+  padding: 30px 0 0 30px;
+  background-color: #F99D1C;
+  width: 100%;
+  height: 15%;
+`;
 
-export const TextTitle = styled.Text`
-  align-self: flex-start;
-
-  font-size: 24px;
-  color: #4d4d4f;
-  font-weight: bold;
-
-  margin-bottom: 30px;
+export const ButtonsContainer = styled.View`
+  width:100%;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 export const ReasonTitleText = styled.Text`
@@ -34,14 +35,10 @@ export const ReasonContainer = styled.View`
 `;
 
 export const ReasonText = styled.Text`
-  max-width: 200px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #7e868a;
   margin-left: 10px;
   text-align: left;
 `;
-export const Pelucia = styled.Image`
-  width:100px;
-  height:100px;
-`;
+

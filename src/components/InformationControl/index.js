@@ -2,6 +2,8 @@ import React, { ReactPropTypes } from 'react';
 
 import * as Unicons from '@iconscout/react-native-unicons';
 
+import {Text} from 'react-native';
+
 import {
   InformationControlContainer,
   InformationTotal,
@@ -17,9 +19,10 @@ const InformationControl = ({
   informationText,
   adicionalInformation,
   level,
+  margin
 }) => {
   return (
-    <InformationControlContainer>
+    <InformationControlContainer margin={margin}>
       <InformationTotal>
         <Unicons.UilAnalytics size={18} color="#7E868A" />
         <InformationTotalText>{informationTitleText}</InformationTotalText>
@@ -32,7 +35,9 @@ const InformationControl = ({
       </TotalLine>
 
       <InformationTotalText style={{ marginTop: 10 }}>
+        <Unicons.UilBag size={15} color="#7E868A" />
         {adicionalInformation}
+        <Unicons.UilPen size={15} color="#7E868A" />
       </InformationTotalText>
     </InformationControlContainer>
   );

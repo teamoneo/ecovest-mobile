@@ -28,4 +28,15 @@ export const TableTitle = styled.Text`
 export const ItensArea = styled.View`
   display: flex;
   flex-direction: column;
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:15px;
+  padding-bottom:20px;
+  border: 1px solid #e6e7e8;
+  background-color:#fff;
+`;
+export const FinalLabel = styled.Text`
+  align-self:center;
+  font-size: 18px;
+  padding-top:10px;
+  color: #9d9fa2;
 `;
